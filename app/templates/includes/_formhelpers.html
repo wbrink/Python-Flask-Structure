@@ -1,0 +1,31 @@
+{% macro render_field(field) %}
+  {{ field.label }} <br>
+  {{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li style="color: red">{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+<!-- 
+Jinja2 macro that simplifies form making
+this allows you to simply put:
+
+
+{{ render_field(form.username) }}
+
+
+which is equivalent to:
+
+{{ form.username.label }} <br>
+{{ form.username }}
+{% if form.username.errors %}
+    <ul class=errors>
+    {% for error in form.username.errors %}
+      <li style="color: red">{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %} -->

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form action="" method="POST" name="login">
+        {{ form.hidden_tag() }}
+        <!-- <p>
+            {{ form.username.label }} <br>
+            {{ form.username(size=32) }}
+            {% if form.username.errors %}
+                <ul class="errors">
+                    {% for error in form.username.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+           
+        </p>
+        
+        <p>
+            {{ form.password.label }} <br>
+            {{ form.password(size=32) }}
+            {% if form.password.errors %}
+                <ul class="errors">
+                    {% for error in form.password.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </p>
+        
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p> -->
+        
+            <p>{{ render_field(form.username) }} </p>
+            <p>{{ render_field(form.password) }}</p>
+        </dl>
+        
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        
+        
+        <p> {{ form.submit() }}</p> 
+        
+        
+    </form>
+
+{% endblock %}
+
+

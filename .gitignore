@@ -1,0 +1,6 @@
+venv
+__pycache__
+app.db
+
+# from flask-migrate wraps around alembic
+migrations
